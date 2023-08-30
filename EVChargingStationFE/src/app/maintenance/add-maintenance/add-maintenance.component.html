@@ -1,0 +1,72 @@
+<mat-card class="mat-elevation-z10 card-container matcard">
+    <mat-card-title class="title">{{!isEditMode ? 'Add' : 'Edit'}} maintenance</mat-card-title>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <form [formGroup]="addEditMaintenanceForm">
+        <div class="left-and-right">
+          <div class="left-side">
+            <span class="field-name"> Station<span class="required-star"> *</span></span>
+            <mat-form-field class="input-text-field">
+              <mat-label for="station">Select station</mat-label>
+              <mat-select matInput formControlName="station" placeholder="Type" [compareWith]="compareObjects"
+                [(ngModel)]="maintenance.station">
+                <mat-option *ngFor="let station of allStations" [value]="station">
+                  {{ station.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <span class="field-name">Description<span class="required-star"> *</span></span>
+            <mat-form-field class="input-text-field">
+              <mat-label for="description">Description</mat-label>
+              <input autocomplete="off" formControlName="description" matInput type="text" placeholder="Description" required
+                [(ngModel)]="maintenance.description">
+              
+            </mat-form-field>
+  
+            <span class="field-name">Outcome<span class="required-star"> *</span></span>
+            <mat-form-field class="input-text-field">
+              <mat-label for="outcome">Outcome</mat-label>
+              <input autocomplete="off" formControlName="outcome" matInput type="text" placeholder="Outcome"
+                required [(ngModel)]="maintenance.outcome">
+            </mat-form-field>
+
+            <span class="field-name">Status<span class="required-star"> *</span></span>
+            <mat-form-field class="input-text-field">
+              <mat-label for="status">Status</mat-label>
+              <input autocomplete="off" formControlName="status" matInput type="text" placeholder="Status"
+                required [(ngModel)]="maintenance.status">
+            </mat-form-field>
+
+            <span class="field-name">Last Maintenance Date<span class="required-star"> *</span></span>
+      <mat-form-field style="flex: 1; margin-right: 10px" class="input-text-field">
+        <mat-label>Last Maintenance Date</mat-label>
+        <input [(ngModel)]="maintenance.lastMaintenanceDate" matInput [matDatepicker]="picker" formControlName="lastMaintenanceDate" placeholder="Last Maintenance Date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker disabled="false"></mat-datepicker>
+
+      </mat-form-field>
+
+             <span class="field-name">Next Maintenance Date<span class="required-star"> *</span></span>
+      <mat-form-field style="flex: 1; margin-right: 10px" class="input-text-field">
+        <mat-label>Next Maintenance Date</mat-label>
+        <input matInput [matDatepicker]="nextMaintenancePicker" [(ngModel)]="maintenance.nextMaintenanceDate"  formControlName="nextMaintenanceDate" placeholder="Next Maintenance Date">
+        <mat-datepicker-toggle matSuffix [for]="nextMaintenancePicker"></mat-datepicker-toggle>
+        <mat-datepicker #nextMaintenancePicker disabled="false"></mat-datepicker>
+      </mat-form-field>
+
+
+
+          </div>
+        </div>
+        <mat-card-actions class="buttons-container">
+            <button (click)="addOrEditMaintenance()" mat-raised-button class="save-btn"
+                [disabled]="!addEditMaintenanceForm.valid">
+                SAVE
+            </button>
+            <button routerLink="/maintenances" mat-raised-button class="cancel-btn">CANCEL</button>
+        </mat-card-actions>
+      </form>
+  
+    </mat-card-content>
+  </mat-card>

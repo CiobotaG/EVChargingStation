@@ -1,0 +1,32 @@
+<h1>Welcome to the Electric Gas Station Administrator Map!</h1>
+
+<div id="map"></div>
+<div  *ngIf="clickOnMarker" class="station-container">
+    <mat-card class="mat-elevation-z10 card-container">
+        <mat-card-title class="title">Stations</mat-card-title>
+        <mat-card-content class="card-content">
+            <table mat-table [dataSource]="stations" class="mat-elevation-z8 station-table">
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef> Name </th>
+                    <td mat-cell *matCellDef="let station"> {{station.name}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="serialNumber">
+                    <th mat-header-cell *matHeaderCellDef> Serian Number </th>
+                    <td mat-cell *matCellDef="let station"> {{station.serialNumber}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="stationType">
+                    <th mat-header-cell *matHeaderCellDef> Station Type </th>
+                    <td mat-cell *matCellDef="let station"> {{station.stationType.name}} </td>
+                </ng-container>
+
+                <tr class="header-row" mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+                <tr class="mat-row" mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+            </table>
+        </mat-card-content>   
+        <mat-divider></mat-divider>
+    </mat-card>
+</div>
+
+

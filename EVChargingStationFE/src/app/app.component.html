@@ -1,0 +1,58 @@
+<mat-sidenav-container class="container">
+  <mat-sidenav #sidenav mode="side" opened>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/home"><span>Home</span></a>
+      <a mat-list-item (click)= "toggleLocations = !toggleLocations"><span>Locations</span></a>
+      <mat-nav-list *ngIf="toggleLocations"> 
+        <a mat-list-item class="mat-list-item-sublist" routerLink="/locations"><span>List</span></a>
+        <a mat-list-item class="mat-list-item-sublist" *ngIf="checkHide" routerLink="/add-location"><span>Add Location</span></a>
+      </mat-nav-list>
+      <a mat-list-item (click)= "toggleStations = !toggleStations"><span>Stations</span></a>
+      <mat-nav-list *ngIf="toggleStations">
+        <a mat-list-item class="mat-list-item-sublist"  routerLink="/stations"><span>List</span></a>
+        <a mat-list-item class="mat-list-item-sublist" *ngIf="checkHide" routerLink="/add-station"><span>Add station</span></a>
+      </mat-nav-list>
+    <a mat-list-item (click)= "toggleStationTypes = !toggleStationTypes"><span>Station Types</span></a>
+    <mat-nav-list *ngIf="toggleStationTypes">
+      <a mat-list-item class="mat-list-item-sublist"  routerLink="/stationtypes"><span>List</span></a>
+      <a mat-list-item class="mat-list-item-sublist" *ngIf="checkHide" routerLink="/add-stationtype"><span>Add station type</span></a>
+    </mat-nav-list>
+    <a mat-list-item *ngIf="checkHide" (click)= "toggleUsers = !toggleUsers"><span>Users</span></a>
+    <mat-nav-list *ngIf="toggleUsers">
+      <a mat-list-item class="mat-list-item-sublist" *ngIf="checkHide"  routerLink="/users"><span>List</span></a>
+      <a mat-list-item class="mat-list-item-sublist" *ngIf="checkHide" routerLink="/add-user"><span>Add new user</span></a>
+    </mat-nav-list>
+    <a mat-list-item *ngIf="checkHide" (click)= "toggleMaintenance = !toggleMaintenance"><span>Maintenance</span></a>
+    <mat-nav-list *ngIf="toggleMaintenance">
+      <a mat-list-item class="mat-list-item-sublist" *ngIf="checkHide" routerLink="/maintenances"><span>All Maintenances</span></a>
+      <a mat-list-item class="mat-list-item-sublist" *ngIf="checkHide" routerLink="/add-maintenance"><span>Add new maintenance</span></a>
+    </mat-nav-list>
+    <a mat-list-item *ngIf="HideisLoggedIn" (click)= "toggleGraphs = !toggleGraphs"><span>Graphs</span></a>
+    <mat-nav-list *ngIf="toggleGraphs">
+      <a mat-list-item class="mat-list-item-sublist" *ngIf="checkHide" routerLink="/barchart"><span>Bar Chart</span></a>
+      <a mat-list-item class="mat-list-item-sublist" *ngIf="checkHide" routerLink="/piechart"><span>Pie Chart Statuses</span></a>
+      <a mat-list-item class="mat-list-item-sublist" *ngIf="HideisLoggedIn" routerLink="/radar"><span>Locations Radar</span></a>
+      
+    </mat-nav-list>
+    <a mat-list-item routerLink="/about"><span>About</span></a>
+  </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <span><mat-icon>menu</mat-icon></span>
+      </button>
+      <span>EV Charging Stations</span>
+      <button *ngIf="!HideisLoggedIn" mat-button id="login-button" routerLink="/login">Login</button>
+      <button mat-button id="logout-button" (click)="logout()">Logout</button>
+      <button mat-button *ngIf="!HideisLoggedIn" id="register-button" routerLink="/register">Register</button>
+      <button *ngIf="checkHide" mat-icon-button id="notification-button" (click)="handleNotificationClick()">
+        <mat-icon>notifications</mat-icon>
+        <span class="notification-count">{{ notificationsCount }}</span>
+      </button>
+      
+      <app-maintenance-notification-list  class="notification-list" *ngIf="showMaintenanceNotifications && HideisLoggedIn" [maintenanceNotifications]="maintenanceNotifications"></app-maintenance-notification-list>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

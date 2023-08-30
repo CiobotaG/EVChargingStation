@@ -1,0 +1,13 @@
+<div style="display: flex; flex-direction: column; align-items: center;">
+    <h3 style="text-align: center;">Radar Chart to compare each location</h3>
+    <div style="width: 1000px; height: 1000px; margin: 0 auto;">
+      <canvas baseChart
+              [datasets]="radarChartData"
+              [labels]="radarChartLabels"
+              [type]="radarChartType"
+              
+              (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)"></canvas>
+    </div>
+  </div>
+  

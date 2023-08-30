@@ -1,0 +1,57 @@
+<div class="maintenance-container">
+    <mat-card class="mat-elevation-z10 card-container">
+        <mat-card-title class="title">Maintenances</mat-card-title>
+        <mat-card-content class="card-content">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 maintenance-table">
+                <ng-container matColumnDef="station">
+                    <th mat-header-cell *matHeaderCellDef> Station </th>
+                    <td mat-cell *matCellDef="let maintenance"> {{maintenance.station.name}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="description">
+                    <th mat-header-cell *matHeaderCellDef> Description </th>
+                    <td mat-cell *matCellDef="let maintenance"> {{maintenance.description}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="outcome">
+                    <th mat-header-cell *matHeaderCellDef> Outcome </th>
+                    <td mat-cell *matCellDef="let maintenance"> {{maintenance.outcome}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="status">
+                    <th mat-header-cell *matHeaderCellDef> Status </th>
+                    <td mat-cell *matCellDef="let maintenance"> {{maintenance.status}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="lastmaintenancedate">
+                    <th mat-header-cell *matHeaderCellDef> Last Maintenance Date </th>
+                    <td mat-cell *matCellDef="let maintenance"> {{maintenance.lastMaintenanceDate | date: 'dd MMM y'}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="nextmaintenancedate">
+                    <th mat-header-cell *matHeaderCellDef>Next Maintenance Date</th>
+                    <td mat-cell *matCellDef="let maintenance"> {{maintenance.nextMaintenanceDate | date: 'dd MMM y'}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="actions">
+                    <th mat-header-cell *matHeaderCellDef> Actions </th>
+                    <td mat-cell *matCellDef="let maintenance">
+                            <button mat-icon-button routerLink="/maintenance/{{maintenance.id}}">
+                        <mat-icon>edit</mat-icon>
+                      </button>
+                      <button mat-icon-button (click)="onDelete(maintenance)">
+                        <mat-icon>delete</mat-icon>
+                      </button>
+                    </td>
+                  </ng-container>
+
+                <tr class="header-row" mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+                <tr class="mat-row" mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+            </table>
+        </mat-card-content>
+        <mat-paginator class="paginator" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>    
+        <mat-divider></mat-divider>
+    </mat-card>
+
+    <button class="add-button" mat-raised-button routerLink="/add-maintenance">Add new maintenance</button>
+</div>

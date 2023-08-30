@@ -1,0 +1,117 @@
+h1 {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 100px;
+    text-shadow: 1px 1px 1px;
+  }
+
+  #map {
+    width: 80%;
+    height: 600px;
+    margin-left: 160px;
+    border: 2px solid rgb(102, 152, 26); /* Border color */
+    border-radius: 10px; /* Rounded corners */
+  }
+
+  .station-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #c3eac3;
+  }
+  
+  .card-container {
+    width: 90%;
+    margin-top: 20px;
+    background-color: #9cca9c;
+  }
+  
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 16px;
+    background-color: #9cca9c;
+    color: black;
+  }
+  
+  .card-content {
+    padding: 16px;
+  }
+
+  th,
+td {
+    width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* or any other desired text truncation method */
+}
+
+ tr {
+      background-color: #c3eac3;
+    }
+
+tr:hover{
+    background-color: #caf4ca;
+}
+
+
+
+  table {
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .station-table {
+    width: 100%;
+    color: black;
+  }
+  
+  .mat-header-cell {
+    font-weight: bold;
+    background-color: green;
+    color: white;
+  }
+  
+  .title{
+    padding:16px;
+  }
+  .mat-cell {
+    padding: 8px;
+  }
+  
+  .paginator {
+    margin-top: 20px;
+    background-color: #9cca9c;
+  }
+  
+  .add-button {
+    margin-top: 20px;
+    background-color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .add-button:hover {
+    background-color: darkgreen;
+  }
+
+  .mat-row:nth-child(even) {
+    background-color: #c3eac3;
+  }
+
+  .mat-row:nth-child(odd) {
+    background-color: #9cca9c;
+  }
+
+  .mat-row:nth-child(even):hover {
+    background-color: #caf4ca;
+  }
+
+  .mat-row:nth-child(odd):hover {
+    background-color: #caf4ca;
+  }

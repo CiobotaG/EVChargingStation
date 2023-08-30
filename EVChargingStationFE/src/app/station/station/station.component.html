@@ -1,0 +1,47 @@
+<div class="station-container">
+    <mat-card class="mat-elevation-z10 card-container">
+        <mat-card-title class="title">Stations</mat-card-title>
+        <mat-card-content class="card-content">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 station-table">
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef> Name </th>
+                    <td mat-cell *matCellDef="let station"> {{station.name}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="serialNumber">
+                    <th mat-header-cell *matHeaderCellDef> Serian Number </th>
+                    <td mat-cell *matCellDef="let station"> {{station.serialNumber}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="location">
+                    <th mat-header-cell *matHeaderCellDef> Location </th>
+                    <td mat-cell *matCellDef="let station"> {{station.location.name}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="stationType">
+                    <th mat-header-cell *matHeaderCellDef> Station Type </th>
+                    <td mat-cell *matCellDef="let station"> {{station.stationType.name}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="actions">
+                    <th mat-header-cell *matHeaderCellDef> Actions </th>
+                    <td mat-cell *matCellDef="let station">
+                            <button mat-icon-button routerLink="/station/{{station.stationId}}">
+                        <mat-icon>edit</mat-icon>
+                      </button>
+                      <button mat-icon-button (click)="onDelete(station)">
+                        <mat-icon>delete</mat-icon>
+                      </button>
+                    </td>
+                  </ng-container>
+
+                <tr class="header-row" mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+                <tr class="mat-row" mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+            </table>
+        </mat-card-content>
+        <mat-paginator class="paginator" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>    
+        <mat-divider></mat-divider>
+    </mat-card>
+
+    <button class="add-button" mat-raised-button routerLink="/add-station">Add new station</button>
+</div>

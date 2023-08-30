@@ -1,0 +1,13 @@
+<div *ngIf="maintenanceNotifications.length > 0">
+  <h2>Maintenance Notifications:</h2>
+  <ul>
+    <li *ngFor="let maintenance of maintenanceNotifications">
+      <ng-container *ngIf="maintenance.station"> <!-- Add an additional ngIf check -->
+        The station {{ maintenance.station.name }} needs maintenance. Last maintenance date was - {{ maintenance.lastMaintenanceDate | date }}
+      </ng-container>
+    </li>
+  </ul>
+</div>
+<div *ngIf="maintenanceNotifications.length === 0">
+  <p>No maintenance notifications.</p>
+</div>

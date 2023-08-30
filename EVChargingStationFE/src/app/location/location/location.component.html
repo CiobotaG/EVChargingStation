@@ -1,0 +1,47 @@
+<div class="location-container">
+    <mat-card class="mat-elevation-z10 card-container">
+        <mat-card-title class="title">Locations</mat-card-title>
+        <mat-card-content class="card-content">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 location-table">
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef> Name </th>
+                    <td mat-cell *matCellDef="let location"> {{location.name}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="country">
+                    <th mat-header-cell *matHeaderCellDef> Country </th>
+                    <td mat-cell *matCellDef="let location"> {{location.country}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="city">
+                    <th mat-header-cell *matHeaderCellDef> City </th>
+                    <td mat-cell *matCellDef="let location"> {{location.city}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="contactEmail">
+                    <th mat-header-cell *matHeaderCellDef> Contact Email </th>
+                    <td mat-cell *matCellDef="let location"> {{location.contactEmail}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="actions">
+                    <th mat-header-cell *matHeaderCellDef> Actions </th>
+                    <td mat-cell *matCellDef="let location">
+                            <button mat-icon-button routerLink="/location/{{location.locationId}}">
+                        <mat-icon>edit</mat-icon>
+                      </button>
+                      <button mat-icon-button (click)="onDelete(location)">
+                        <mat-icon>delete</mat-icon>
+                      </button>
+                    </td>
+                  </ng-container>
+
+                <tr class="header-row" mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+                <tr class="mat-row" mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+            </table>
+        </mat-card-content>
+        <mat-paginator class="paginator" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>    
+        <mat-divider></mat-divider>
+    </mat-card>
+
+    <button class="add-button" mat-raised-button routerLink="/add-location">Add new location</button>
+</div>

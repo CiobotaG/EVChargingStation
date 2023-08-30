@@ -1,0 +1,16 @@
+.map-frame {
+    border: 2px solid grey;
+    height: 300px;
+    position: relative;
+}
+
+#map {
+    position: relative;
+    height: 100%;
+}
+
+.custom-icon {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+  }

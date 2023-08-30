@@ -1,0 +1,21 @@
+<div class="sub-title">Let's be confident with our up-to-date information.</div>
+<div *ngIf="HideRoleNotAdmin">This is the hub for managing all aspects of the electric gas station map, including locations, 
+    stations, station types, maintenance, and users.
+</div>
+<div *ngIf="HideRoleNotAdmin">Through this dashboard, you can add new stations and locations, view and edit existing ones and 
+    manage maintenance.
+</div>
+<div *ngIf="HideRoleNotAdmin">We're constantly working to improve the site, so if you have any suggestions or feedback, 
+    please don't hesitate to contact us. Thank you for choosing the Electric Gas Station Map, 
+    and happy administering!
+</div>
+
+<div *ngIf="!HideRoleNotAdmin">This is the hub for viewing all aspects of the electric gas station map, including locations, 
+    stations, station types.
+</div>
+<div *ngIf="!HideRoleNotAdmin">Through this dashboard, you can see all our stations, locations and station types.If you register, you can watch the graph to see your nearest station location
+</div>
+<div *ngIf="!HideRoleNotAdmin">We're constantly working to improve the site, so if you have any suggestions or feedback, 
+    please don't hesitate to contact us. Thank you for choosing the Electric Gas Station Map, 
+    and happy browsing!
+</div>

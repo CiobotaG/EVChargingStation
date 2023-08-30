@@ -1,0 +1,65 @@
+<mat-card class="mat-elevation-z10 card-container matcard">
+    <mat-card-title class="title">
+        <span *ngIf="!isRegisterMode">{{!isEditMode ? 'Add' : 'Edit'}} user</span>
+        <span *ngIf="isRegisterMode">Complete your username and desired password to register!</span>
+    </mat-card-title>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+        <form [formGroup]="addEditUserForm">
+            <mat-card-content>
+                <span class="field-name">Username<span class="required-star"> *</span></span>
+                <mat-form-field class="input-text-field">
+                    <mat-label>Name</mat-label>
+                    <input autocomplete="off" matInput placeholder="Username" name="username" formControlName="username"
+                        type="text" [(ngModel)]="user.username">
+                </mat-form-field>
+            </mat-card-content>
+
+            <mat-card-content>
+                <span class="field-name">Password<span class="required-star"> *</span></span>
+                <mat-form-field class="input-text-field">
+                    <mat-label>Password</mat-label>
+                    <input autocomplete="off" matInput placeholder="Password" name="password" formControlName="password"
+                        type="password" [(ngModel)]="user.password">
+                </mat-form-field>
+            </mat-card-content>
+
+            <mat-card-content *ngIf="isRegisterMode">
+                <span class="field-name">Confirm<span class="required-star"> *</span></span>
+                <mat-form-field class="input-text-field">
+                  <input required autocomplete="off" matInput placeholder="Confirm password" name="confirmPassword" formControlName="confirmPassword"
+                    type="password">
+                </mat-form-field>
+                <div *ngIf="addUser.confirmPassword.value" [ngClass]="{
+                  'password-match-error': addUser.password.value !== addUser.confirmPassword.value,
+                  'password-match-success': addUser.password.value === addUser.confirmPassword.value
+                }">
+                  {{ addUser.password.value !== addUser.confirmPassword.value ? 'Passwords do not match' : 'Passwords match' }}
+                </div>
+              </mat-card-content>
+
+            <mat-card-content *ngIf="!isRegisterMode">
+                <span class="field-name">Role<span class="required-star"> *</span></span>
+                <mat-form-field class="input-text-field">
+                    <mat-label>Role</mat-label>
+                    <input autocomplete="off" matInput placeholder="Role" name="role" formControlName="role"
+                        type="text" [(ngModel)]="user.role">
+                </mat-form-field>
+            </mat-card-content>
+
+            <mat-card-content>
+                <mat-checkbox [checked]="!addEditUserForm.value.resolved" 
+                (change)="addEditUserForm.get('isActive')?.setValue($event.checked)" 
+                formControlName="isActive" [(ngModel)]="user.isActive">Active status</mat-checkbox>
+            </mat-card-content>
+
+            <mat-card-actions class="buttons-container">
+                <button (click)="addOrEditUser()" mat-raised-button class="save-btn"
+                    [disabled]="!addEditUserForm.valid">
+                    SAVE
+                </button>
+                <button routerLink="/users" mat-raised-button class="cancel-btn">CANCEL</button>
+            </mat-card-actions>
+        </form>
+    </mat-card-content>
+</mat-card>

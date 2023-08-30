@@ -1,0 +1,55 @@
+<mat-card class="mat-elevation-z10 card-container matcard">
+    <mat-card-title class="title">{{!isEditMode ? 'Add' : 'Edit'}} station</mat-card-title>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <form [formGroup]="addEditStationForm">
+        <div class="left-and-right">
+          <div class="left-side">
+            <span class="field-name">Name<span class="required-star"> *</span></span>
+            <mat-form-field class="input-text-field">
+              <mat-label for="name">Name</mat-label>
+              <input autocomplete="off" formControlName="name" matInput type="text" placeholder="Name" required
+                [(ngModel)]="station.name">
+              
+            </mat-form-field>
+  
+            <span class="field-name">Serial number<span class="required-star"> *</span></span>
+            <mat-form-field class="input-text-field">
+              <mat-label for="serialNumber">Serial number</mat-label>
+              <input autocomplete="off" formControlName="serialNumber" matInput type="text" placeholder="Serial number"
+                required [(ngModel)]="station.serialNumber">
+            </mat-form-field>
+  
+            <span class="field-name"> Station Type<span class="required-star"> *</span></span>
+            <mat-form-field class="input-text-field">
+              <mat-label for="stationType">Select type</mat-label>
+              <mat-select matInput formControlName="stationType" placeholder="Type" [compareWith]="compareObjects"
+                [(ngModel)]="station.stationType">
+                <mat-option *ngFor="let stationType of allStationTypes" [value]="stationType">
+                  {{ stationType.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+  
+            <span class="field-name">Location<span class="required-star"> *</span></span>
+            <mat-form-field class="input-text-field">
+              <mat-label for="location">Select location</mat-label>
+              <mat-select matInput formControlName="location" placeholder="Location" [compareWith]="compareObjects"
+                [(ngModel)]="station.location">
+                <mat-option *ngFor="let location of allLocations" [value]="location">
+                  {{ location.name }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <mat-card-actions class="buttons-container">
+            <button (click)="addOrEditStation()" mat-raised-button class="save-btn"
+                [disabled]="!addEditStationForm.valid">
+                SAVE
+            </button>
+            <button routerLink="/locations" mat-raised-button class="cancel-btn">CANCEL</button>
+        </mat-card-actions>
+      </form>
+  
+    </mat-card-content>
+  </mat-card>
