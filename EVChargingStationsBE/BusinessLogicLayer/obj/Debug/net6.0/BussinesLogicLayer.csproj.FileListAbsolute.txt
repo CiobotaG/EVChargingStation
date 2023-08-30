@@ -1,0 +1,17 @@
+D:\Licenta\EVChargingStationsBE\BussinesLogicLayer\bin\Debug\net6.0\BussinesLogicLayer.deps.json
+D:\Licenta\EVChargingStationsBE\BussinesLogicLayer\bin\Debug\net6.0\BussinesLogicLayer.runtimeconfig.json
+D:\Licenta\EVChargingStationsBE\BussinesLogicLayer\bin\Debug\net6.0\BussinesLogicLayer.dll
+D:\Licenta\EVChargingStationsBE\BussinesLogicLayer\bin\Debug\net6.0\BussinesLogicLayer.pdb
+D:\Licenta\EVChargingStationsBE\BussinesLogicLayer\bin\Debug\net6.0\DataAccesLayer.dll
+D:\Licenta\EVChargingStationsBE\BussinesLogicLayer\bin\Debug\net6.0\DataAccesLayer.pdb
+D:\Licenta\EVChargingStationsBE\BussinesLogicLayer\obj\Debug\net6.0\BussinesLogicLayer.csproj.AssemblyReference.cache
+D:\Licenta\EVChargingStationsBE\BussinesLogicLayer\obj\Debug\net6.0\BussinesLogicLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Licenta\EVChargingStationsBE\BussinesLogicLayer\obj\Debug\net6.0\BussinesLogicLayer.AssemblyInfoInputs.cache
+D:\Licenta\EVChargingStationsBE\BussinesLogicLayer\obj\Debug\net6.0\BussinesLogicLayer.AssemblyInfo.cs
+D:\Licenta\EVChargingStationsBE\BussinesLogicLayer\obj\Debug\net6.0\BussinesLogicLayer.csproj.CoreCompileInputs.cache
+D:\Licenta\EVChargingStationsBE\BussinesLogicLayer\obj\Debug\net6.0\BussinesLogicLayer.csproj.CopyComplete
+D:\Licenta\EVChargingStationsBE\BussinesLogicLayer\obj\Debug\net6.0\BussinesLogicLayer.dll
+D:\Licenta\EVChargingStationsBE\BussinesLogicLayer\obj\Debug\net6.0\refint\BussinesLogicLayer.dll
+D:\Licenta\EVChargingStationsBE\BussinesLogicLayer\obj\Debug\net6.0\BussinesLogicLayer.pdb
+D:\Licenta\EVChargingStationsBE\BussinesLogicLayer\obj\Debug\net6.0\BussinesLogicLayer.genruntimeconfig.cache
+D:\Licenta\EVChargingStationsBE\BussinesLogicLayer\obj\Debug\net6.0\ref\BussinesLogicLayer.dll
