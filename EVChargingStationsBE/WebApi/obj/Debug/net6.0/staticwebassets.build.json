@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "b4o2+eKDv3hDyc3mJkFBbOypxPplc3l522DKXTsnROg=",
+  "Source": "EVChargingStationsBE",
+  "BasePath": "_content/EVChargingStationsBE",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
