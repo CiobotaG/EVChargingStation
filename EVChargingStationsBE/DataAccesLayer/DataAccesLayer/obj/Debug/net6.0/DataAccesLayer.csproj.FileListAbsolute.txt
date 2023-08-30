@@ -1,0 +1,14 @@
+D:\Licenta\EVChargingStationsBE\DataAccesLayer\bin\Debug\net6.0\DataAccesLayer.deps.json
+D:\Licenta\EVChargingStationsBE\DataAccesLayer\bin\Debug\net6.0\DataAccesLayer.runtimeconfig.json
+D:\Licenta\EVChargingStationsBE\DataAccesLayer\bin\Debug\net6.0\DataAccesLayer.dll
+D:\Licenta\EVChargingStationsBE\DataAccesLayer\bin\Debug\net6.0\DataAccesLayer.pdb
+D:\Licenta\EVChargingStationsBE\DataAccesLayer\obj\Debug\net6.0\DataAccesLayer.csproj.AssemblyReference.cache
+D:\Licenta\EVChargingStationsBE\DataAccesLayer\obj\Debug\net6.0\DataAccesLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Licenta\EVChargingStationsBE\DataAccesLayer\obj\Debug\net6.0\DataAccesLayer.AssemblyInfoInputs.cache
+D:\Licenta\EVChargingStationsBE\DataAccesLayer\obj\Debug\net6.0\DataAccesLayer.AssemblyInfo.cs
+D:\Licenta\EVChargingStationsBE\DataAccesLayer\obj\Debug\net6.0\DataAccesLayer.csproj.CoreCompileInputs.cache
+D:\Licenta\EVChargingStationsBE\DataAccesLayer\obj\Debug\net6.0\DataAccesLayer.dll
+D:\Licenta\EVChargingStationsBE\DataAccesLayer\obj\Debug\net6.0\refint\DataAccesLayer.dll
+D:\Licenta\EVChargingStationsBE\DataAccesLayer\obj\Debug\net6.0\DataAccesLayer.pdb
+D:\Licenta\EVChargingStationsBE\DataAccesLayer\obj\Debug\net6.0\DataAccesLayer.genruntimeconfig.cache
+D:\Licenta\EVChargingStationsBE\DataAccesLayer\obj\Debug\net6.0\ref\DataAccesLayer.dll
